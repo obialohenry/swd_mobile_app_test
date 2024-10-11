@@ -21,10 +21,12 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
   Widget build(BuildContext context) {
     var signupProvider = ref.watch(signupViewModel);
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: AppColors.kPrimary,
       appBar: AppBar(
+        foregroundColor: AppColors.kTransparent,
         backgroundColor: AppColors.kTransparent,
-        surfaceTintColor: AppColors.kTransparent,
+        // surfaceTintColor: AppColors.kTransparent,
         leadingWidth: 78.w,
         leading: Padding(
           padding: EdgeInsets.only(left: 15.0.w),
@@ -86,9 +88,10 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                     DefaultButtonMain(
                       text: signupProvider.currentPage == 0 ? "Next" : "Verify Email",
                       onPressed: () {
-                        if (signupProvider.signupFormKey.currentState!.validate()) {
+                        if (signupProvider.currentPage == 0 &&
+                            signupProvider.signupFormKey.currentState!.validate()) {
                           signupProvider.signupFormKey.currentState!.save();
-                          if (signupProvider.currentPage == 0) {
+                          
                             signupProvider.setPageViewPageToNextPage();
                             _pageController.animateToPage(1,
                                 duration: const Duration(milliseconds: 5), curve: Curves.bounceIn);
@@ -100,7 +103,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                               ),
                             );
                           }
-                        }
+                        
                       },
                     ),
                     Gap(20.h),

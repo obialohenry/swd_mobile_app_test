@@ -79,15 +79,13 @@ class _MovingCirclesState extends State<MovingCircles> with TickerProviderStateM
       borderRadius: widget.borderRadius,
       child: SizedBox(
         height: widget.height.h,
-        child: Expanded(
-          child: Align(
-              alignment: Alignment.topRight,
-              child: AnimatedCircle(
-                height: widget.height.h / 5,
-                animation: _animation1,
-                color: AppColors.kMochaBrown,
-              )),
-        ),
+        child: Align(
+            alignment: Alignment.topRight,
+            child: AnimatedCircle(
+              height: widget.height.h / 5,
+              animation: _animation1,
+              color: AppColors.kMochaBrown,
+            )),
       ),
     );
   }
