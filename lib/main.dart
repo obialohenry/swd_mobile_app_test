@@ -4,6 +4,9 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:swd_mobile_app_test/view/screens/authentication/create_account_screen.dart';
+import 'package:swd_mobile_app_test/view/screens/authentication/sign_in_screen.dart';
+import 'package:swd_mobile_app_test/view/screens/authentication/verify_email_screen.dart';
 
 
 Future<void> main() async {
@@ -56,7 +59,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const SplashScreen(),
+      child: const SignInScreen(),
     );
   }
 }

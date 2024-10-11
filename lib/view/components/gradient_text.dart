@@ -1,27 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:swd_mobile_app_test/src/config.dart';
 
-class TextView extends ConsumerWidget {
-  const TextView({
+class GradientText extends StatelessWidget {
+  GradientText({
+    Key? key,
+    this.style,
+    this.gradient = AppColors.kDeafaultButtoGradient,
+    // begin: Alignment.centerLeft,
+
     required this.text,
-    super.key,
     this.textOverflow = TextOverflow.ellipsis,
     this.textAlign = TextAlign.left,
     this.onTap,
     this.textStyle,
     this.color,
     this.fontSize,
-    this.fontFamily = aeonik,
+    this.fontFamily,
     this.fontWeight,
     this.maxLines,
     this.decoration,
     this.wordSpacing,
-    this.letterSpacing,
-    this.softRap,
-    this.height,
-  });
+    this.xAlignment = 0.25,
+    this.yAlignment = 3,
+  }) : super(key: key);
 
+  final TextStyle? style;
+  final Gradient? gradient;
   final String text;
   final TextOverflow? textOverflow;
   final TextAlign? textAlign;
@@ -34,35 +38,31 @@ class TextView extends ConsumerWidget {
   final FontWeight? fontWeight;
   final TextDecoration? decoration;
   final double? wordSpacing;
-  final double? letterSpacing;
-  final bool? softRap;
-  final double? height;
-
+  final double? xAlignment;
+  final double? yAlignment;
+  final Gradient defaultGradient = AppColors.kDeafaultButtoGradient;
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    // ref.watch(themeViewModel).themeMode;
-    return GestureDetector(
-      onTap: onTap,
+  Widget build(BuildContext context) {
+    return ShaderMask(
+      blendMode: BlendMode.srcIn,
+      shaderCallback: (bounds) => gradient!.createShader(
+        Rect.fromLTWH(
+          0,
+          0,
+          bounds.width,
+          bounds.height,
+        ),
+      ),
       child: Text(
-        softWrap: softRap,
         text,
         key: key,
         style: textStyle ??
             TextStyle(
-              height: height,
-              fontFamily: fontFamily,
-              fontSize: fontSize != null ? fontSize! : 12.spMin,
+              fontFamily: fontFamily ?? 'Satoshi',
+              fontSize: fontSize != null ? fontSize! : 14,
               fontWeight: fontWeight ?? FontWeight.w400,
-              // color: color ?? AppColors.kTextBlack,
-              color: color ?? Theme.of(context).colorScheme.primary,
-              // (themeMode == ThemeMode.dark
-              // ? Theme.of(context).textTheme.bodySmall!.color
-              // : Theme.of(context).primaryColor),
-              
               decoration: decoration,
               wordSpacing: wordSpacing,
-              letterSpacing: letterSpacing,
-              decorationColor: AppColors.kWhite,
             ),
         textAlign: textAlign,
         overflow: textOverflow,
