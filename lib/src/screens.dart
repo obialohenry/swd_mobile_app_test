@@ -1,1 +1,11 @@
 export 'package:swd_mobile_app_test/view/screens/splash_screen.dart';
+export 'package:swd_mobile_app_test/view/screens/authentication/sign_in_screen.dart';
+export 'package:swd_mobile_app_test/view/screens/authentication/sign_up_screen.dart';
+export 'package:swd_mobile_app_test/view/screens/authentication/create_account_screen.dart';
+export 'package:swd_mobile_app_test/view/screens/authentication/verify_email_screen.dart';
+export 'package:swd_mobile_app_test/view/screens/dashboard/dashboard_screen.dart';
+export 'package:swd_mobile_app_test/view/screens/dashboard/home_screen.dart';
+export 'package:swd_mobile_app_test/view/screens/dashboard/referrals_screen.dart';
+export 'package:swd_mobile_app_test/view/screens/dashboard/services_screen.dart';
+export 'package:swd_mobile_app_test/view/screens/dashboard/settings_screen.dart';
+export 'package:swd_mobile_app_test/view/screens/dashboard/statistics_screen.dart';

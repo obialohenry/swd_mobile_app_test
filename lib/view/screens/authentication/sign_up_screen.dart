@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:swd_mobile_app_test/src/components.dart';
 import 'package:swd_mobile_app_test/src/config.dart';
-import 'package:swd_mobile_app_test/view/components/button.dart';
-import 'package:swd_mobile_app_test/view/components/gradient_text.dart';
-import 'package:swd_mobile_app_test/view/components/moving_circles.dart';
-import 'package:swd_mobile_app_test/view/screens/dashboard/dashboard_screen.dart';
-import 'package:swd_mobile_app_test/view_model/auth/sign_up_view_model.dart';
+import 'package:swd_mobile_app_test/src/providers.dart';
+import 'package:swd_mobile_app_test/src/screens.dart';
+
 
 class SignUpScreen extends ConsumerStatefulWidget {
   const SignUpScreen({super.key});

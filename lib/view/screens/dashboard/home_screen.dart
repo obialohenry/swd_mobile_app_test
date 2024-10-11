@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:swd_mobile_app_test/src/components.dart';
 import 'package:swd_mobile_app_test/src/config.dart';
-import 'package:swd_mobile_app_test/view/components/gradient_text.dart';
+
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});

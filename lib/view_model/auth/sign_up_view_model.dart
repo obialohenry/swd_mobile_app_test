@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:swd_mobile_app_test/view/screens/authentication/create_account_screen.dart';
-import 'package:swd_mobile_app_test/view/screens/authentication/verify_email_screen.dart';
+import 'package:swd_mobile_app_test/src/screens.dart';
+
 
 final signupViewModel = ChangeNotifierProvider((ref) => SignupViewModel());
 

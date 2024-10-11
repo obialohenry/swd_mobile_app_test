@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:swd_mobile_app_test/src/components.dart';
 import 'package:swd_mobile_app_test/src/config.dart';
-import 'package:swd_mobile_app_test/view/screens/dashboard/home_screen.dart';
-import 'package:swd_mobile_app_test/view/screens/dashboard/referrals_screen.dart';
-import 'package:swd_mobile_app_test/view/screens/dashboard/services_screen.dart';
-import 'package:swd_mobile_app_test/view/screens/dashboard/settings_screen.dart';
-import 'package:swd_mobile_app_test/view/screens/dashboard/statistics_screen.dart';
-import 'package:swd_mobile_app_test/view_model/dashboard_view_model.dart';
+import 'package:swd_mobile_app_test/src/providers.dart';
+import 'package:swd_mobile_app_test/src/screens.dart';
+
 
 class DashBoardScreen extends ConsumerStatefulWidget {
   const DashBoardScreen({super.key});

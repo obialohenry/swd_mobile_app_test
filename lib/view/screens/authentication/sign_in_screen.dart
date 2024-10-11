@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:swd_mobile_app_test/src/components.dart';
 import 'package:swd_mobile_app_test/src/config.dart';
+import 'package:swd_mobile_app_test/src/providers.dart';
+import 'package:swd_mobile_app_test/src/screens.dart';
 import 'package:swd_mobile_app_test/src/utils.dart';
-import 'package:swd_mobile_app_test/view/components/button.dart';
-import 'package:swd_mobile_app_test/view/components/custom_text_field.dart';
-import 'package:swd_mobile_app_test/view/components/gradient_text.dart';
-import 'package:swd_mobile_app_test/view/components/moving_circles.dart';
-import 'package:swd_mobile_app_test/view/screens/authentication/sign_up_screen.dart';
-import 'package:swd_mobile_app_test/view_model/auth/signin_view_model.dart';
+
 
 class SignInScreen extends ConsumerStatefulWidget {
   const SignInScreen({super.key});
