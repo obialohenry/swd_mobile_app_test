@@ -97,7 +97,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                           signupProvider.setPageViewPageToNextPage();
                           _pageController.animateToPage(1,
                               duration: const Duration(milliseconds: 5), curve: Curves.bounceIn);
-                        } else {
+                        } else if (signupProvider.currentPage == 1) {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
