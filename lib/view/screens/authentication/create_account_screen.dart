@@ -21,7 +21,7 @@ class CreateAccountScreen extends ConsumerWidget {
             children: [
               Center(
                 child: TextView(
-                  text: "Create an account",
+                  text: createAnAccount,
                   fontSize: 25.spMin,
                   fontWeight: FontWeight.w200,
                   color: AppColors.kWhite,
@@ -37,9 +37,9 @@ class CreateAccountScreen extends ConsumerWidget {
                         Expanded(
                           child: CustomTextField(
                             fieldLabel: "",
-                            labelHint: "First name",
+                            labelHint: firstName,
                             controller: signupProvider.firstNameController,
-                            hint: "First name",
+                            hint: firstName,
                             validator: (email) => Validators().validateEmptyTextField(email),
                           ),
                         ),
@@ -47,9 +47,9 @@ class CreateAccountScreen extends ConsumerWidget {
                         Expanded(
                           child: CustomTextField(
                             fieldLabel: "",
-                            labelHint: "Last name",
+                            labelHint: lastName,
                             controller: signupProvider.lastNameController,
-                            hint: "Last name",
+                            hint: lastName,
                             validator: (email) => Validators().validateEmptyTextField(email),
                           ),
                         ),
@@ -58,18 +58,18 @@ class CreateAccountScreen extends ConsumerWidget {
                     Gap(15.h),
                     CustomTextField(
                       fieldLabel: "",
-                      labelHint: "Phone number",
+                      labelHint: phoneNumber,
                       controller: signupProvider.phoneNumberController,
                       keyboardType: TextInputType.number,
-                      hint: "Enter phone number",
+                      hint: enterPhoneNumber,
                       validator: (email) => Validators().validateEmptyTextField(email),
                     ),
                     Gap(15.h),
                     CustomTextField(
                       fieldLabel: "",
-                      labelHint: "Email address",
+                      labelHint: emailAddress,
                       controller: signupProvider.emailController,
-                      hint: "Enter Email address",
+                      hint: enterEmailAddress,
                       validator: (email) => Validators().validateEmptyTextField(email),
                     ),
                     Gap(15.h),
@@ -77,9 +77,9 @@ class CreateAccountScreen extends ConsumerWidget {
                       password: true,
                       visibleField: true,
                       fieldLabel: "",
-                      labelHint: "Create Password",
+                      labelHint: createPassword,
                       controller: signupProvider.passwordController,
-                      hint: "Enter Password",
+                      hint: enterPassword,
                       obscureInput: signupProvider.obscurePass,
                       onObscureText: signupProvider.togglePassWordVisibility,
                       validator: (email) => Validators().validatePassword(email),
@@ -87,9 +87,9 @@ class CreateAccountScreen extends ConsumerWidget {
                     Gap(15.h),
                     CustomTextField(
                       fieldLabel: "",
-                      labelHint: "Referral Code (Optional)",
+                      labelHint: referralCode,
                       controller: signupProvider.referalCodeController,
-                      hint: "Enter Referral Code",
+                      hint: enterReferralCode,
                       // validator: (email) => Validators().validateEmptyTextField(email),
                     ),
                   ],

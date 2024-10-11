@@ -5,7 +5,6 @@ import 'package:swd_mobile_app_test/src/config.dart';
 import 'package:swd_mobile_app_test/src/providers.dart';
 import 'package:swd_mobile_app_test/src/screens.dart';
 
-
 class SignUpScreen extends ConsumerStatefulWidget {
   const SignUpScreen({super.key});
 
@@ -28,21 +27,26 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
         leadingWidth: 78.w,
         leading: Padding(
           padding: EdgeInsets.only(left: 15.0.w),
-          child: Row(
-            children: [
-              Icon(
-                Icons.arrow_back_ios,
-                color: AppColors.kAshGrey,
-                size: 24.spMin,
-              ),
-              Gap(5.w),
-              TextView(
-                text: "Back",
-                fontWeight: FontWeight.w400,
-                fontSize: 16.spMin,
-                color: AppColors.kAshGrey,
-              )
-            ],
+          child: GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Row(
+              children: [
+                Icon(
+                  Icons.arrow_back_ios,
+                  color: AppColors.kAshGrey,
+                  size: 24.spMin,
+                ),
+                Gap(5.w),
+                TextView(
+                  text: back,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16.spMin,
+                  color: AppColors.kAshGrey,
+                )
+              ],
+            ),
           ),
         ),
         actions: [
@@ -51,7 +55,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
             child: GestureDetector(
                 onTap: () {},
                 child: GradientText(
-                  text: "Sign in instead",
+                  text: signInInstead,
                   fontSize: 16.spMin,
                 )),
           )
@@ -84,24 +88,23 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   children: [
                     Gap(20.h),
                     DefaultButtonMain(
-                      text: signupProvider.currentPage == 0 ? "Next" : "Verify Email",
+                      text: signupProvider.currentPage == 0 ? next : verifyEmail,
                       onPressed: () {
                         if (signupProvider.currentPage == 0 &&
                             signupProvider.signupFormKey.currentState!.validate()) {
                           signupProvider.signupFormKey.currentState!.save();
-                          
-                            signupProvider.setPageViewPageToNextPage();
-                            _pageController.animateToPage(1,
-                                duration: const Duration(milliseconds: 5), curve: Curves.bounceIn);
-                          } else {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const DashBoardScreen(),
-                              ),
-                            );
-                          }
-                        
+
+                          signupProvider.setPageViewPageToNextPage();
+                          _pageController.animateToPage(1,
+                              duration: const Duration(milliseconds: 5), curve: Curves.bounceIn);
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const DashBoardScreen(),
+                            ),
+                          );
+                        }
                       },
                     ),
                     Gap(20.h),
@@ -125,8 +128,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                     Gap(10.h),
                     TextView(
                       text: signupProvider.currentPage == 0
-                          ? "Account information"
-                          : "Email verification",
+                          ? accountInformation : emailVerification,
                       fontSize: 16.spMin,
                       fontWeight: FontWeight.w200,
                       color: AppColors.kCoolSilver,

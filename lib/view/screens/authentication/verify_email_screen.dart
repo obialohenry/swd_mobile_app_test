@@ -21,7 +21,7 @@ class VerifyEmailScreen extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextView(
-              text: "Verify your email",
+              text: verifyYourEmail,
               fontSize: 25.spMin,
               fontWeight: FontWeight.w200,
               color: AppColors.kWhite,
@@ -29,7 +29,7 @@ class VerifyEmailScreen extends ConsumerWidget {
             Gap(15.h),
             RichText(
               text: TextSpan(
-                  text: "Please enter the OTP sent to\n",
+                  text: pleaseEnterOTP,
                   style: TextStyle(
                     fontSize: 16.spMin,
                     fontWeight: FontWeight.w400,
@@ -37,7 +37,7 @@ class VerifyEmailScreen extends ConsumerWidget {
                   ),
                   children: [
                     TextSpan(
-                      text: "tolu.ab19@gmail.com",
+                      text: dummyMail,
                       style: TextStyle(
                         fontSize: 16.spMin,
                         fontWeight: FontWeight.w500,
@@ -51,7 +51,7 @@ class VerifyEmailScreen extends ConsumerWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SWDPinCodeField(),
+                const SWDPinCodeField(),
                 Gap(5.w),
                 TextView(
                   text: "-",
@@ -59,7 +59,7 @@ class VerifyEmailScreen extends ConsumerWidget {
                   color: AppColors.kAshGrey,
                 ),
                 Gap(5.w),
-                SWDPinCodeField(),
+                const SWDPinCodeField(),
               ],
             )
           ],

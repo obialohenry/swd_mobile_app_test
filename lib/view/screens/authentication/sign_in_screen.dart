@@ -53,9 +53,9 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                         children: [
                           CustomTextField(
                             fieldLabel: "",
-                            labelHint: "Email address",
+                            labelHint: emailAddress,
                             controller: signinProvider.emailController,
-                            hint: "Enter Email address",
+                            hint: enterEmailAddress,
                             validator: (email) => Validators().validateEmptyTextField(email),
                           ),
                           Gap(20.h),
@@ -64,9 +64,9 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                             password: true,
                             visibleField: true,
                             fieldLabel: "",
-                            labelHint: "Password",
+                            labelHint: password,
                             controller: signinProvider.passwordController,
-                            hint: "Enter Password",
+                            hint: enterPassword,
                             obscureInput: signinProvider.obscurePass,
                             onObscureText: signinProvider.togglePassWordVisibility,
                             validator: (email) => Validators().validatePassword(email),
@@ -76,7 +76,7 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                     ),
                     Gap(20.h),
                     DefaultButtonMain(
-                      text: "Sign in",
+                      text: signIn,
                       onPressed: () {
                         if (signinFormKey.currentState!.validate()) {
                           signinFormKey.currentState!.save();
@@ -90,14 +90,14 @@ class _SignInScreenState extends ConsumerState<SignInScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextView(
-                          text: "I don't have an account, ",
+                          text: iDoNotHaveAnAccount,
                           fontSize: 14.spMin,
                           fontWeight: FontWeight.w400,
                           color: AppColors.kWhite,
                         ),
                         GestureDetector(
                           onTap: () {},
-                          child: GradientText(text: "Create account"),
+                          child: GradientText(text: createAccount),
                         ),
                       ],
                     ),

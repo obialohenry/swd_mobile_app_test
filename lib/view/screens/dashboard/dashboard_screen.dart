@@ -37,7 +37,7 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
               width: 24.w,
               color: dashboardProvider.selectedIndex == 0 ? AppColors.kWhite : AppColors.kIronGray,
             ),
-            label: "Home",
+            label: home,
           ),
           BottomNavigationBarItem(
             icon: ImageView.asset(
@@ -47,7 +47,7 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
               width: 24.w,
               color: dashboardProvider.selectedIndex == 1 ? AppColors.kWhite : AppColors.kIronGray,
             ),
-            label: "Services",
+            label: services,
           ),
           BottomNavigationBarItem(
             icon: ImageView.asset(
@@ -56,7 +56,7 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
               width: 24.w,
               color: dashboardProvider.selectedIndex == 2 ? AppColors.kWhite : AppColors.kIronGray,
             ),
-            label: "Statistics",
+            label: statistics,
           ),
           BottomNavigationBarItem(
             icon: ImageView.asset(
@@ -65,7 +65,7 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
               width: 24.w,
               color: dashboardProvider.selectedIndex == 3 ? AppColors.kWhite : AppColors.kIronGray,
             ),
-            label: "Referrals",
+            label: referrals,
           ),
           BottomNavigationBarItem(
             icon: ImageView.asset(
@@ -74,7 +74,7 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
               width: 24.w,
               color: dashboardProvider.selectedIndex == 4 ? AppColors.kWhite : AppColors.kIronGray,
             ),
-            label: "Settings",
+            label: settings,
           ),
         ],
         unselectedItemColor: AppColors.kIronGray,
